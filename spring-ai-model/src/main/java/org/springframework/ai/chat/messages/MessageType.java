@@ -20,21 +20,21 @@ package org.springframework.ai.chat.messages;
  * Enumeration representing types of {@link Message Messages} in a chat application. It
  * can be one of the following: USER, ASSISTANT, SYSTEM, FUNCTION.
  */
-public enum MessageType {
+public enum MessageType {           /* 消息类型 */
 
 	/**
 	 * A {@link Message} of type {@literal user}, having the user role and originating
 	 * from an end-user or developer.
 	 * @see UserMessage
 	 */
-	USER("user"),
+	USER("user"),              /* 用户输入 */
 
 	/**
 	 * A {@link Message} of type {@literal assistant} passed in subsequent input
 	 * {@link Message Messages} as the {@link Message} generated in response to the user.
 	 * @see AssistantMessage
 	 */
-	ASSISTANT("assistant"),
+	ASSISTANT("assistant"),   /* 大模型返回 */
 
 	/**
 	 * A {@link Message} of type {@literal system} passed as input {@link Message
@@ -42,14 +42,14 @@ public enum MessageType {
 	 * like a certain character or provide answers in a specific format.
 	 * @see SystemMessage
 	 */
-	SYSTEM("system"),
+	SYSTEM("system"),        /* 系统提示词 */
 
 	/**
 	 * A {@link Message} of type {@literal function} passed as input {@link Message
 	 * Messages} with function content in a chat application.
 	 * @see ToolResponseMessage
 	 */
-	TOOL("tool");
+	TOOL("tool");           /* 工具执行结果 */
 
 	private final String value;
 

@@ -117,7 +117,7 @@ public class AssistantMessage extends AbstractMessage implements MediaContent {
 		return new Builder();
 	}
 
-	public record ToolCall(String id, String type, String name, String arguments) {
+	public record ToolCall(String id, String type, String name, String arguments) { /* 【工具调用】对象 */
 
 	}
 

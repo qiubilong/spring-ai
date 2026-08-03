@@ -100,8 +100,8 @@ public class FunctionToolCallback<I, O> implements ToolCallback {
 
 		logger.debug("Starting execution of tool: {}", this.toolDefinition.name());
 
-		I request = JsonParser.fromJson(toolInput, this.toolInputType);
-		O response = callMethod(request, toolContext);
+		I request = JsonParser.fromJson(toolInput, this.toolInputType); /* 使用json 反序列化参数对象，所以工具参数必须是对象，不能是基本类型 */
+		O response = callMethod(request, toolContext);   /* 调用工具 */
 
 		logger.debug("Successful execution of tool: {}", this.toolDefinition.name());
 
@@ -110,7 +110,7 @@ public class FunctionToolCallback<I, O> implements ToolCallback {
 
 	private O callMethod(I request, @Nullable ToolContext toolContext) {
 		try {
-			return this.toolFunction.apply(request, toolContext);
+			return this.toolFunction.apply(request, toolContext); /* 调用工具 */
 		}
 		catch (ToolExecutionException ex) {
 			throw ex;

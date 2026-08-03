@@ -27,7 +27,7 @@ import org.springframework.ai.content.Media;
  * @see Media
  * @see MessageType
  */
-public interface Message extends Content {
+public interface Message extends Content { /* 消息 */
 
 	/**
 	 * Get the message type.
